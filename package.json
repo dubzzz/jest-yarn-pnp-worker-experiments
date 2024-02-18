@@ -1,9 +1,9 @@
 {
-  "type": "commonjs",
+  "type": "module",
   "name": "jest-yarn-pnp-worker-experiments",
   "packageManager": "yarn@4.1.0",
   "scripts": {
-    "test": "jest"
+    "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
   },
   "dependencies": {
     "jest": "^29.7.0",
