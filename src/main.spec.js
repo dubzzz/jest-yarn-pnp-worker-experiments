@@ -1,7 +1,8 @@
-import { Worker } from "node:worker_threads";
+const { Worker } = require("node:worker_threads");
+const { pathToFileURL } = require("url");
 
 test("should work", async () => {
-  const currentFileURL = new URL(import.meta.url);
+  const currentFileURL = pathToFileURL(__filename);
   const workerFileURL = new URL( // hacky approach! just for the experiment
     currentFileURL.toString().replace("main.spec.js", "worker.js")
   );

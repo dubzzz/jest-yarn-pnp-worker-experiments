@@ -1,4 +1,4 @@
-import { workerData } from "node:worker_threads";
-import prand from "pure-rand";
+const { workerData, parentPort } = require("node:worker_threads");
+const prand = require("pure-rand");
 
 parentPort.postMessage({ computed: workerData.raw * workerData.raw });
